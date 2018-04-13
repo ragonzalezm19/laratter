@@ -8,19 +8,31 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $links = [
-            'https://platzi.com/laravel' => 'Curso de Laravel',
-            'https://laravel.com' => 'Página de Laravel'
-        ];
+        $messages = [
+            [
+                'id' => 1,
+                'content' => 'Este es el primer mensaje',
+                'image' => 'http://lorempixel.com/600/338?1',
+            ],
+            [
+                'id' => 2,
+                'content' => 'Este es el segundo mensaje',
+                'image' => 'http://lorempixel.com/600/338?12',
+            ],
+            [
+                'id' => 3,
+                'content' => 'Otro mensaje mas',
+                'image' => 'http://lorempixel.com/600/338?3',
+            ],
+            [
+                'id' => 4,
+                'content' => 'El ultimo mensaje',
+                'image' => 'http://lorempixel.com/600/338?4',
+            ],
+        ];    
     
         return view('welcome', [
-            // 'teacher' => 'Guido Contreras Woda',
-            'links' => $links,
+            'messages' => $messages,
         ]);
-    }
-
-    public function aboutUs()
-    {
-        return view('about');
     }
 }
