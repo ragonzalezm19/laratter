@@ -11,12 +11,12 @@
 </div>
 <div class="row">
     <form action="/messages/create" method="post">
-        <div class="form-group">
+        <div class="form-group @if($errors->has('message')) has-danger @endif">
             {{ csrf_field() }}
-            <input type="text" name="message" class="form-control @if($errors->has('message')) is-invalid @endif" placeholder="Qué estas pensando?">
+            <input type="text" name="message" class="form-control" placeholder="Qué estas pensando?">
             @if ($errors->has('message'))
                 @foreach ($errors->get('message') as $error)
-                    <div class="invalid-feedback"> {{ $error }} </div>
+                    <div class="form-control-feedback"> {{ $error }} </div>
                 @endforeach
             @endif
         </div>
