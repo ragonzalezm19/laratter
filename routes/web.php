@@ -17,6 +17,8 @@ Route::get('/messages/{message}', 'MessagesController@show');
 
 Route::post('/messages/create', 'MessagesController@create')->middleware('auth');
 
-Route::get('/{username}', 'UsersController@show');
+Route::get('/user/{username}/follows', 'UsersController@follows');
+Route::post('/user/{username}/follow', 'UsersController@follow');
+Route::get('/user/{username}', 'UsersController@show');
 
 Auth::routes();
